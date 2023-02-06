@@ -15,6 +15,13 @@ console.log(data[0])
 export default function App() {
   // state for light/dark mode
   const [lightMode, setLightMode] = useState(true)
+  // state for country/countries
+  const [country, setCountry] = useState(data)
+
+  // probably change state to country by using filter method to search for numeric code/key
+  function chooseCountry() {
+    setCountry()
+  }
 
   return (
     <div className="app-container">
