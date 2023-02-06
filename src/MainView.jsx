@@ -5,15 +5,17 @@ import Country from './Country'
 
 import data from './data.json'
 
-export default function MainView() {
-  const countryElements = data.map(country => {
+export default function MainView(props) {
+  const countryElements = props.country.map(country => {
     return <Country 
       key={country.numericCode}
+      numericCode={country.numericCode}
       flag={country.flag}
       name={country.name}
       population={country.population}
       region={country.region}
       capital={country.capital}
+      onClick={props.onClick}
     />
   })
 

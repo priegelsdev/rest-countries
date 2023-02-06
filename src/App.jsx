@@ -6,7 +6,7 @@ import { faMoon as fasMoon } from '@fortawesome/free-solid-svg-icons'
 import { faMoon as farMoon } from '@fortawesome/free-regular-svg-icons'
 
 import MainView from './MainView'
-import Country from './Country'
+import CountryView from './CountryView'
 
 import data from './data.json'
 
@@ -19,8 +19,8 @@ export default function App() {
   const [country, setCountry] = useState(data)
 
   // probably change state to country by using filter method to search for numeric code/key
-  function chooseCountry() {
-    setCountry()
+  function chooseCountry(key) {
+    setCountry(data.filter(country => country.numericCode == key))
   }
 
   return (
@@ -36,7 +36,16 @@ export default function App() {
       </header>
 
       <main>
-        <MainView />
+        {country.length > 1 && <MainView 
+          country={country}
+          onClick={chooseCountry}
+        />}
+{/*         {typeof country === 'object' && <CountryView 
+          country={country}
+        />} */}
+        {country.length < 2 && <CountryView 
+          country={country[0]}
+        />}
       </main>
 
     </div>
