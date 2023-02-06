@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon as fasMoon } from '@fortawesome/free-solid-svg-icons'
 import { faMoon as farMoon } from '@fortawesome/free-regular-svg-icons'
 
+import MainView from './MainView'
+
 export default function App() {
   // state for light/dark mode
   const [lightMode, setLightMode] = useState(true)
@@ -20,6 +22,9 @@ export default function App() {
           <span>{lightMode ? 'Dark Mode' : 'Light Mode'}</span> 
         </div>    
       </header>
+
+      <MainView />
+
 
     </div>
   )
