@@ -6,6 +6,11 @@ import { faMoon as fasMoon } from '@fortawesome/free-solid-svg-icons'
 import { faMoon as farMoon } from '@fortawesome/free-regular-svg-icons'
 
 import MainView from './MainView'
+import Country from './Country'
+
+import data from './data.json'
+
+console.log(data[0])
 
 export default function App() {
   // state for light/dark mode
@@ -26,7 +31,7 @@ export default function App() {
       <main>
         <MainView />
       </main>
-      
+
     </div>
   )
 }

@@ -1,7 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass as farMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
+import Country from './Country'
+
+import data from './data.json'
+
 export default function MainView() {
+  const countryElements = data.map(country => {
+    return <Country 
+      key={country.numericCode}
+      flag={country.flag}
+      name={country.name}
+      population={country.population}
+      region={country.region}
+      capital={country.capital}
+    />
+  })
+
   return (
     <div className="main-container">
       <form className="search-bar">
@@ -17,6 +32,8 @@ export default function MainView() {
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
       </select>
+
+      {countryElements}
     </div>
   )
 }
