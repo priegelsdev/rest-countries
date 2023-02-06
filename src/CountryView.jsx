@@ -17,7 +17,7 @@ export default function CountryView(props) {
 
   return (
     <div className="country-view-container">
-      <button className="back-btn"><FontAwesomeIcon className="back-btn-icon" icon={fasArrowLeftLong}/>Back</button>
+      <button className="back-btn" onClick={props.onBackClick}><FontAwesomeIcon className="back-btn-icon" icon={fasArrowLeftLong}/>Back</button>
       <img className="flag" src={props.country.flag} alt={`flag of ${props.country.name}`} />
 
       <div className="country-info">

@@ -18,9 +18,14 @@ export default function App() {
   // state for country/countries
   const [country, setCountry] = useState(data)
 
-  // probably change state to country by using filter method to search for numeric code/key
+  // function to set state to specific country
   function chooseCountry(key) {
     setCountry(data.filter(country => country.numericCode == key))
+  }
+
+  // function to set state to all data again to show main page
+  function handleBackClick() {
+    setCountry(data)
   }
 
   return (
@@ -45,6 +50,7 @@ export default function App() {
         />} */}
         {country.length < 2 && <CountryView 
           country={country[0]}
+          onBackClick={handleBackClick}
         />}
       </main>
 

@@ -133,6 +133,7 @@ b {
   background-color: white;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .border-btn-container {
