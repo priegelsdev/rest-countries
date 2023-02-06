@@ -23,9 +23,10 @@ export default function App() {
         </div>    
       </header>
 
-      <MainView />
-
-
+      <main>
+        <MainView />
+      </main>
+      
     </div>
   )
 }

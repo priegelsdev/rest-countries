@@ -7,6 +7,10 @@ html, body {
   margin: 0;
 }
 
+main {
+  padding: 1.5em;
+}
+
 /** HEADER **/
 
 header {
@@ -34,15 +38,13 @@ header {
 
 .search-bar {
   position: relative;
-  margin-top: 2em;
+  margin-top: 0.5em;
 }
 
-              /* CHANGE POSITIONING !!!! */
-
 .search-icon {
-  position: absolute; 
+  position: absolute; /* CHANGE POSITIONING !!!! */ 
   top: 18px;
-  left: 100px; 
+  left: 40px; 
   color: rgb(155, 155, 155);
   z-index: 1;
 }
@@ -50,14 +52,30 @@ header {
 .search-input {
   display: block;
   margin: 0 auto;
-  width: 90vw;
+  width: 100%;
   padding: 1em;
   padding-left: 7em;
   border-radius: 5px;
   border: none;
-  -webkit-box-shadow: 0px -1px 4px 3px #e4e3e3;
-  -moz-box-shadow: 0px -1px 4px 3px #e4e3e3;
-  box-shadow: 0px -1px 4px 3px #e4e3e3;
+  -webkit-box-shadow: 0px 2px 4px 3px #e4e3e3;
+  -moz-box-shadow: 0px 2px 4px 3px #e4e3e3;
+  box-shadow: 0px 2px 4px 3px #e4e3e3;
   line-height: 2;
 }
 
+.filter {
+  width: 50%;
+  margin-top: 3.5em;
+  padding: 1.25em 1.667em;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: 0px 2px 4px 3px #e4e3e3;
+  -moz-box-shadow: 0px 2px 4px 3px #e4e3e3;
+  box-shadow: 0px 2px 4px 3px #e4e3e3;
+  border-right: 20px solid transparent;  /* changes arrow position */
+}
+
+option {
+  border-radius: 5px;
+}

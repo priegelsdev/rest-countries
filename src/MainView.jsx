@@ -8,6 +8,15 @@ export default function MainView() {
         <FontAwesomeIcon className="search-icon"icon={farMagnifyingGlass}/>
         <input className="search-input" placeholder="Search for a country..."></input>
       </form>
+
+      <select className="filter">
+        <option value="">Filter by Region</option>
+        <option value="Africa">Africa</option>
+        <option value="America">America</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+      </select>
     </div>
   )
 }
