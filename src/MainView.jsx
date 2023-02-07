@@ -44,8 +44,9 @@ export default function MainView(props) {
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
       </select>
-
-      {countryElements}
+      <div className="country-elements-container">
+        {countryElements}
+      </div>
     </div>
   )
 }

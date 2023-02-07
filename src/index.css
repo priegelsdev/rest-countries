@@ -121,9 +121,13 @@ option {
   -moz-box-shadow: 0px 2px 4px 3px #e4e3e3;
   box-shadow: 0px 2px 4px 3px #e4e3e3;
   background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .flag {
+  align-self: center;
+  margin: 0 auto;
   max-width:100%;
   max-height:100%;
   border-radius: 5px 5px 0 0 ;
@@ -190,4 +194,23 @@ b {
 
 .country-view-container > img, .country-view-container > .country-info, .country-add-info {
   margin-bottom: 3em;
+}
+
+/* MEDIA QUERIES FOR DESKTOP DESIGN */
+
+@media (min-width: 1200px) {
+  .country-container {
+    max-width: 280px;
+  }
+
+  .country-container > img {
+    min-width: 260px;
+    min-height: 180px;
+  }
+
+  .country-elements-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around
+  }
 }
