@@ -34,7 +34,8 @@ export default function App() {
 
   function handleChange() {
     const searchInput = document.querySelector('.search-input')
-    const searchInputCapitalized = searchInput.value.charAt(0).toUpperCase() + searchInput.value.slice(1)
+    const searchInputLower = searchInput.value.toLowerCase()
+    const searchInputCapitalized = searchInputLower.charAt(0).toUpperCase() + searchInputLower.slice(1)
 
     setSearch(searchInputCapitalized)
   }
@@ -70,7 +71,7 @@ export default function App() {
 {/*         {typeof country === 'object' && <CountryView 
           country={country}
         />} */}
-        {country.length < 2 && <CountryView 
+        {country.length === 1 && <CountryView 
           country={country[0]}
           onBackClick={handleBackClick}
         />}
