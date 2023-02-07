@@ -32,6 +32,7 @@ export default function App() {
     setCountry(data)
   }
 
+  // function to handle input change 
   function handleChange() {
     const searchInput = document.querySelector('.search-input')
     const searchInputLower = searchInput.value.toLowerCase()
@@ -39,6 +40,8 @@ export default function App() {
 
     setSearch(searchInputCapitalized)
   }
+
+  // effect to handle search input change and filter countries based on the input
 
   useEffect(() => {
     const newArray = data.filter(country => country.name.includes(search))
