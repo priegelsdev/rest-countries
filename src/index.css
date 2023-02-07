@@ -146,6 +146,10 @@ b {
   margin: 0;
 }
 
+.no-border {
+  margin: 0;
+}
+
 .back-btn-icon {
   margin-right: 0.7em;
 }

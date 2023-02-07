@@ -11,9 +11,10 @@ export default function CountryView(props) {
 
   /* these should be spelled out */
 
-  const borderCountries = props.country.borders.map(border => (
-    <button key={crypto.randomUUID()} className="border-btn">{border}</button>
-  ))
+  const borderCountries = props.country.borders ? 
+    props.country.borders.map(border => (
+      <button key={crypto.randomUUID()} className="border-btn">{border}</button>)) :
+      <p className="no-border">No border countries</p>
 
   return (
     <div className="country-view-container">
