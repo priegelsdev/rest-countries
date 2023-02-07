@@ -1,3 +1,5 @@
+import {React, useState} from 'react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeftLong as fasArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 
@@ -6,18 +8,19 @@ export default function CountryView(props) {
   const numFor = Intl.NumberFormat('en-us')
   const newFor = numFor.format(numPop)
 
-  const currencies = props.country.currencies.map(currency => currency.name)
-  const languages = props.country.languages.map(language => language.name)
-
-  /* these should be spelled out */
-
-
+  const currencies = props.country.currencies ? 
+                      props.country.currencies.map(currency => currency.name) :
+                      []
+  const languages = props.country.languages ?
+                    props.country.languages.map(language => language.name) :
+                    []
 
   const borderCountries = props.borderCountryArray.length > 0 ? 
   
     props.borderCountryArray.map(border => (
       <button 
         key={crypto.randomUUID()} 
+        onClick={() => props.onBorderClick(border)}
         id={!props.lightMode ? 'dark-el' : 'none'} 
         className="border-btn">{border.name}</button>)) :
 

@@ -83,6 +83,11 @@ export default function App() {
     }
   }))}
 
+  // function for when border button gets clicked, the country state changes
+  function handleBorderClick(newCountry) {
+    setCountry([newCountry])
+  }
+
   return (
     <div className="app-container">
       <header className={!lightMode ? 'dark-el' : 'none'}>
@@ -113,6 +118,7 @@ export default function App() {
           onBackClick={handleBackClick}
           lightMode={lightMode}
           borderCountryArray={borderCountryArray}
+          onBorderClick={handleBorderClick}
         />}
       </main>
 
