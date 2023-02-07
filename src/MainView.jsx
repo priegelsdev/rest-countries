@@ -30,10 +30,10 @@ export default function MainView(props) {
         <input className="search-input" placeholder="Search for a country..."></input>
       </form>
 
-      <select className="filter">
+      <select className="filter" value={props.region} onChange={props.onRegionChange}>
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>
-        <option value="America">America</option>
+        <option value="Americas">America</option>
         <option value="Asia">Asia</option>
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>

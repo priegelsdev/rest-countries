@@ -19,6 +19,8 @@ export default function App() {
   const [country, setCountry] = useState(data)
   // state for search value; initially empty and thus displaying all data
   const [search, setSearch] = useState()
+  // state for region 
+  const [region, setRegion] = useState()
 
   console.log(search)
 
@@ -30,6 +32,10 @@ export default function App() {
   // function to set state to all data again to show main page
   function handleBackClick() {
     setCountry(data)
+  }
+
+  function handleRegionChange(e) {
+    setRegion(e.target.value)
   }
 
   // function to handle input change 
@@ -44,10 +50,18 @@ export default function App() {
   // effect to handle search input change and filter countries based on the input
 
   useEffect(() => {
-    const newArray = data.filter(country => country.name.includes(search))
-    if (search && newArray.length > 0) {
-      setCountry(newArray)
-    } else if (newArray.length === 0) {
+    const regionArray = country.filter(country => country.region === region) 
+    if (region) {
+      setCountry(regionArray)
+    }
+  }, [region])
+
+  useEffect(() => {
+    const filteredArray = country.filter(country => country.name.includes(search))
+
+    if (search && filteredArray.length > 0) {
+      setCountry(filteredArray)
+    } else if (filteredArray.length === 0) {
       // implement: DISPLAY TOOLTIP SHOWING ERROR MESSAGE
     }
   }, [search])
@@ -69,6 +83,8 @@ export default function App() {
           country={country}
           onClick={chooseCountry}
           onChange={handleChange}
+          region={region}
+          onRegionChange={handleRegionChange}
           searchValue={search}
         />}
 {/*         {typeof country === 'object' && <CountryView 
