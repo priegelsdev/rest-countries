@@ -99,6 +99,10 @@ option {
   border-radius: 5px 5px 0 0 ;
 }
 
+.flag-clickable {
+  cursor: pointer;
+}
+
 .country-details {
   padding: 1.5em;
 }

@@ -5,7 +5,7 @@ export default function Country(props) {
 
   return (
     <div className="country-container">
-      <img className="flag" src={props.flag} onClick={() => props.onClick(props.numericCode)}></img>
+      <img className="flag flag-clickable" src={props.flag} onClick={() => props.onClick(props.numericCode)}></img>
       <div className="country-details">
         <h2 className="country-name">{props.name}</h2>
         <p className="country-population"><b>Population: </b>{newFor}</p>
