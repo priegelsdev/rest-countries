@@ -12,6 +12,35 @@ main {
   padding: 1.5em;
 }
 
+/** GENERAL STYLINGS **/
+
+/* use of important to handle color theme state and apply to both versions; other solution would be preferred */
+button:hover {
+  background-color: #7a7f85 !important;
+  color: white;
+  font-weight: bold;
+}
+
+/** COLOR THEME **/
+
+  /** DARK MODE **/
+
+  .dark-bg, #dark-bg {
+    background-color: #202c37;
+    color: white;
+    -webkit-box-shadow: 0px -1px 4px -1px #181818;
+    -moz-box-shadow: 0px -1px 4px -1px #181818;
+    box-shadow: 0px -1px 4px -1px #181818;
+  }
+
+  .dark-el, #dark-el {
+    background-color: #2b3945;
+    color: white;
+    -webkit-box-shadow: 0px -1px 4px 2px #181818;
+    -moz-box-shadow: 0px -1px 4px 2px #181818;
+    box-shadow: 0px -1px 4px 2px #181818;
+  }
+
 /** HEADER **/
 
 header {
@@ -34,24 +63,6 @@ header {
   gap: 0.6em;
   font-weight: 600;
   cursor: pointer;
-}
-
-/** DARK MODE **/
-
-.dark-bg, #dark-bg {
-  background-color: #202c37;
-  color: white;
-  -webkit-box-shadow: 0px -1px 4px -1px #181818;
-  -moz-box-shadow: 0px -1px 4px -1px #181818;
-  box-shadow: 0px -1px 4px -1px #181818;
-}
-
-.dark-el, #dark-el {
-  background-color: #2b3945;
-  color: white;
-  -webkit-box-shadow: 0px -1px 4px 2px #181818;
-  -moz-box-shadow: 0px -1px 4px 2px #181818;
-  box-shadow: 0px -1px 4px 2px #181818;
 }
 
 /** MAIN VIEW **/ 
