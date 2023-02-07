@@ -27,9 +27,6 @@ export default function App() {
     setLightMode(prevState => !prevState)
   }
 
-  // style for darkMode
-  const darkStyle = 0;
-
   // function to set state to specific country
   function chooseCountry(key) {
     setCountry(prevState => prevState.filter(country => country.numericCode == key))
@@ -76,6 +73,16 @@ export default function App() {
     }
   }, [search])
 
+  /**  LOGIC FOR COUNTRYVIEW COMPONENT SO BORDER COUNTRIES GET SPELLED OUT AND GET CLICKABLE **/
+  // border countries array for countryView Component
+  let borderCountryArray = []
+  // filter data with border country strings === alpha3Code for CountryView Component and border countries
+  if (country[0].borders != undefined) {country[0].borders.forEach(borderCountry => data.filter(dataCountry => {
+    if (borderCountry === dataCountry.alpha3Code) {
+      borderCountryArray.push(dataCountry)
+    }
+  }))}
+
   return (
     <div className="app-container">
       <header className={!lightMode ? 'dark-el' : 'none'}>
@@ -105,6 +112,7 @@ export default function App() {
           country={country[0]}
           onBackClick={handleBackClick}
           lightMode={lightMode}
+          borderCountryArray={borderCountryArray}
         />}
       </main>
 
