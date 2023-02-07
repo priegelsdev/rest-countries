@@ -4,7 +4,7 @@ export default function Country(props) {
   const newFor = numFor.format(numPop)
 
   return (
-    <div className="country-container">
+    <div className="country-container" id={!props.lightMode ? 'dark-el' : 'none'}>
       <img className="flag flag-clickable" src={props.flag} onClick={() => props.onClick(props.numericCode)}></img>
       <div className="country-details">
         <h2 className="country-name">{props.name}</h2>

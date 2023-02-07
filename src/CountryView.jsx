@@ -12,13 +12,18 @@ export default function CountryView(props) {
   /* these should be spelled out */
 
   const borderCountries = props.country.borders ? 
+  
     props.country.borders.map(border => (
-      <button key={crypto.randomUUID()} className="border-btn">{border}</button>)) :
+      <button 
+        key={crypto.randomUUID()} 
+        id={!props.lightMode ? 'dark-el' : 'none'} 
+        className="border-btn">{border}</button>)) :
+
       <p className="no-border">No border countries</p>
 
   return (
     <div className="country-view-container">
-      <button className="back-btn" onClick={props.onBackClick}><FontAwesomeIcon className="back-btn-icon" icon={fasArrowLeftLong}/>Back</button>
+      <button className="back-btn" id={!props.lightMode ? 'dark-el' : 'none'} onClick={props.onBackClick}><FontAwesomeIcon className="back-btn-icon" icon={fasArrowLeftLong}/>Back</button>
       <img className="flag" src={props.country.flag} alt={`flag of ${props.country.name}`} />
 
       <div className="country-info">

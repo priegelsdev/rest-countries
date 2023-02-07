@@ -22,6 +22,14 @@ export default function App() {
   // state for region 
   const [region, setRegion] = useState()
 
+  // function to change color theme
+  function changeTheme() {
+    setLightMode(prevState => !prevState)
+  }
+
+  // style for darkMode
+  const darkStyle = 0;
+
   // function to set state to specific country
   function chooseCountry(key) {
     setCountry(prevState => prevState.filter(country => country.numericCode == key))
@@ -70,17 +78,17 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <header>
+      <header className={!lightMode ? 'dark-el' : 'none'}>
         <h3 className="header-title">Where in the world?</h3>
 
         {/* logic to display dark or light mode */}
-        <div className="color-switch">
+        <div className="color-switch" onClick={changeTheme}>
           <FontAwesomeIcon icon={lightMode ? farMoon : fasMoon} />
           <span>{lightMode ? 'Dark Mode' : 'Light Mode'}</span> 
         </div>    
       </header>
 
-      <main>
+      <main className={!lightMode ? 'dark-bg' : 'none'}>
         {country.length > 1 && <MainView 
           country={country}
           onClick={chooseCountry}
@@ -88,6 +96,7 @@ export default function App() {
           region={region}
           onRegionChange={handleRegionChange}
           searchValue={search}
+          lightMode={lightMode}
         />}
 {/*         {typeof country === 'object' && <CountryView 
           country={country}
@@ -95,6 +104,7 @@ export default function App() {
         {country.length === 1 && <CountryView 
           country={country[0]}
           onBackClick={handleBackClick}
+          lightMode={lightMode}
         />}
       </main>
 
