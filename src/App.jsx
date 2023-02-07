@@ -32,9 +32,12 @@ export default function App() {
   // function to set state to all data again to show main page
   function handleBackClick() {
     setCountry(data)
+    setSearch()
+    setRegion()
   }
 
   function handleRegionChange(e) {
+    setCountry(data)
     setRegion(e.target.value)
   }
 
@@ -50,7 +53,9 @@ export default function App() {
   // effect to handle search input change and filter countries based on the input
 
   useEffect(() => {
-    const regionArray = country.filter(country => country.region === region) 
+    const regionArray = country.filter(country => country.region === region)
+    console.log(regionArray)
+
     if (region) {
       setCountry(regionArray)
     }
