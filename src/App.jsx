@@ -10,23 +10,43 @@ import CountryView from './CountryView'
 
 import data from './data.json'
 
-console.log(data[0])
+console.log(data)
 
 export default function App() {
   // state for light/dark mode
   const [lightMode, setLightMode] = useState(true)
   // state for country/countries
   const [country, setCountry] = useState(data)
+  // state for search value; initially empty and thus displaying all data
+  const [search, setSearch] = useState()
+
+  console.log(search)
 
   // function to set state to specific country
   function chooseCountry(key) {
-    setCountry(data.filter(country => country.numericCode == key))
+    setCountry(prevState => prevState.filter(country => country.numericCode == key))
   }
 
   // function to set state to all data again to show main page
   function handleBackClick() {
     setCountry(data)
   }
+
+  function handleChange() {
+    const searchInput = document.querySelector('.search-input')
+    const searchInputCapitalized = searchInput.value.charAt(0).toUpperCase() + searchInput.value.slice(1)
+
+    setSearch(searchInputCapitalized)
+  }
+
+  useEffect(() => {
+    const newArray = data.filter(country => country.name.includes(search))
+    if (search && newArray.length > 0) {
+      setCountry(newArray)
+    } else if (newArray.length === 0) {
+      // implement: DISPLAY TOOLTIP SHOWING ERROR MESSAGE
+    }
+  }, [search])
 
   return (
     <div className="app-container">
@@ -44,6 +64,8 @@ export default function App() {
         {country.length > 1 && <MainView 
           country={country}
           onClick={chooseCountry}
+          onChange={handleChange}
+          searchValue={search}
         />}
 {/*         {typeof country === 'object' && <CountryView 
           country={country}

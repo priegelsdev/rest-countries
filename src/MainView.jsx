@@ -6,6 +6,10 @@ import Country from './Country'
 import data from './data.json'
 
 export default function MainView(props) {
+
+  // countryElements displayed based on search value term; if search value undefined, display all; if value, 
+  // display only matching
+
   const countryElements = props.country.map(country => {
     return <Country 
       key={country.numericCode}
@@ -21,7 +25,7 @@ export default function MainView(props) {
 
   return (
     <div className="main-container">
-      <form className="search-bar">
+      <form className="search-bar" onChange={props.onChange}>
         <FontAwesomeIcon className="search-icon"icon={farMagnifyingGlass}/>
         <input className="search-input" placeholder="Search for a country..."></input>
       </form>
