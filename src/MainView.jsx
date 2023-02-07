@@ -3,8 +3,6 @@ import { faMagnifyingGlass as farMagnifyingGlass } from '@fortawesome/free-solid
 
 import Country from './Country'
 
-import data from './data.json'
-
 export default function MainView(props) {
 
   // countryElements displayed based on search value term; if search value undefined, display all; if value, 

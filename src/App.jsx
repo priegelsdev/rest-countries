@@ -22,8 +22,6 @@ export default function App() {
   // state for region 
   const [region, setRegion] = useState()
 
-  console.log(search)
-
   // function to set state to specific country
   function chooseCountry(key) {
     setCountry(prevState => prevState.filter(country => country.numericCode == key))
@@ -54,7 +52,6 @@ export default function App() {
 
   useEffect(() => {
     const regionArray = country.filter(country => country.region === region)
-    console.log(regionArray)
 
     if (region) {
       setCountry(regionArray)
