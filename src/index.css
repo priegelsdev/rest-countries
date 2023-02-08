@@ -155,7 +155,7 @@ li {
 }
 
 .country-name {
-  margin: 2em auto 1.5em auto;
+  margin: 0.5em auto 1.5em auto;
 }
 
 .country-details > p {
@@ -267,7 +267,7 @@ b {
   }
 
   .country-name {
-    margin: 2em 0 1em;
+    margin: 0.5em 0 1em;
   }
 
   .ul-container {
