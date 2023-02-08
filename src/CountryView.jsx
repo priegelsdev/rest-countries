@@ -29,27 +29,35 @@ export default function CountryView(props) {
   return (
     <div className="country-view-container">
       <button className="back-btn" id={!props.lightMode ? 'dark-el' : 'none'} onClick={props.onBackClick}><FontAwesomeIcon className="back-btn-icon" icon={fasArrowLeftLong}/>Back</button>
-      <img className="flag" src={props.country.flag} alt={`flag of ${props.country.name}`} />
+      
+      <div className="country-card-container">
+        <img className="flag" src={props.country.flag} alt={`flag of ${props.country.name}`} />
 
-      <div className="country-info">
-        <h2 className="country-name">{props.country.name}</h2>
-        <p className="country-region"><b>Native Name: </b>{props.country.nativeName}</p>
-        <p className="country-population"><b>Population: </b>{newFor}</p>
-        <p className="country-region"><b>Region: </b>{props.country.region}</p>
-        <p className="country-region"><b>Sub Region: </b>{props.country.subregion}</p>
-        <p className="country-capital"><b>Capital: </b>{props.country.capital}</p>
-      </div>
+        <div className="country-details-container">
+          <h2 className="country-name">{props.country.name}</h2>
 
-      <div className="country-add-info">
-        <p className="country-population"><b>Top Level Domain: </b>{props.country.topLevelDomain}</p>
-        <p className="country-region"><b>Currencies: </b>{currencies.join(", ")}</p>
-        <p className="country-capital"><b>Languages: </b>{languages.join(", ")}</p>
-      </div>
+          <div className="ul-container">
+            <ul className="country-info">
+              <li className="country-region"><b>Native Name: </b>{props.country.nativeName}</li>
+              <li className="country-population"><b>Population: </b>{newFor}</li>
+              <li className="country-region"><b>Region: </b>{props.country.region}</li>
+              <li className="country-region"><b>Sub Region: </b>{props.country.subregion}</li>
+              <li className="country-capital"><b>Capital: </b>{props.country.capital}</li>
+            </ul>
 
-      <div className="border-countries">
-        <h3 className="border-title">Border Countries</h3>
-        <div className="border-btn-container">
-          {borderCountries}
+            <ul className="country-add-info">
+              <li className="country-population"><b>Top Level Domain: </b>{props.country.topLevelDomain}</li>
+              <li className="country-region"><b>Currencies: </b>{currencies.join(", ")}</li>
+              <li className="country-capital"><b>Languages: </b>{languages.join(", ")}</li>
+            </ul>
+          </div>
+
+          <div className="border-countries">
+            <h3 className="border-title">Border Countries:</h3>
+            <div className="border-btn-container">
+              {borderCountries}
+            </div>
+          </div>
         </div>
       </div>
     </div>

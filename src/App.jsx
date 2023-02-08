@@ -10,7 +10,7 @@ import CountryView from './CountryView'
 
 import data from './data.json'
 
-console.log(data)
+console.log(data) 
 
 export default function App() {
   // state for light/dark mode

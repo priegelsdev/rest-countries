@@ -24,26 +24,28 @@ export default function MainView(props) {
 
   return (
     <div className="main-container">
-      <form className="search-bar" onChange={props.onChange}>
-        <FontAwesomeIcon className="search-icon" icon={farMagnifyingGlass}/>
-        <input 
-          className="search-input" 
-          placeholder="Search for a country..."
-          id={!props.lightMode ? 'dark-el' : 'none'}></input>
-      </form>
+      <div className="filter-container">
+        <form className="search-bar" onChange={props.onChange}>
+          <FontAwesomeIcon className="search-icon" icon={farMagnifyingGlass}/>
+          <input 
+            className="search-input" 
+            placeholder="Search for a country..."
+            id={!props.lightMode ? 'dark-el' : 'none'}></input>
+        </form>
 
-      <select 
-        className="filter" 
-        id={!props.lightMode ? 'dark-el' : 'none'}
-        value={props.region} 
-        onChange={props.onRegionChange}>
-          <option value="">Filter by Region</option>
-          <option value="Africa">Africa</option>
-          <option value="Americas">America</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-      </select>
+        <select 
+          className="filter" 
+          id={!props.lightMode ? 'dark-el' : 'none'}
+          value={props.region} 
+          onChange={props.onRegionChange}>
+            <option value="">Filter by Region</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+        </select>
+      </div>
       <div className="country-elements-container">
         {countryElements}
       </div>
