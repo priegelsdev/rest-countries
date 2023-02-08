@@ -58,15 +58,19 @@ export default function App() {
   useEffect(() => {
     const regionArray = country.filter(country => country.region === region)
 
-    if (region) {
+    if (region && region != undefined) {
       setCountry(regionArray)
     }
   }, [region])
 
   useEffect(() => {
-    const filteredArray = country.filter(country => country.name.includes(search))
+    const filteredArray = region != undefined ? 
+      data.filter(country => country.name.includes(search) && 
+      country.region === region) :    
+      data.filter(country => country.name.includes(search))
 
-    if (search && filteredArray.length > 0) {
+    if (filteredArray.length > 0) {
+      console.log(search)
       setCountry(filteredArray)
     } else if (filteredArray.length === 0) {
       // implement: DISPLAY TOOLTIP SHOWING ERROR MESSAGE
